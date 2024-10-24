@@ -31,6 +31,17 @@ def onehot(data1):
     for i, category in enumerate(data1):
         one_hot_encoded[i, category_to_index[category]] = 1
 
+    return one_hot_encoded, category_to_index
+
+data = np.array(['A', 'B', 'C', 'D', 'E', 'F'])
+
+encoded_data, encoding_map = onehot(data)
+
+print("Original Data:", data)
+print("One-Hot Encoded Data:\n", encoded_data)
+print("Encoding Map:", encoding_map)
+
+
 
 
 
@@ -53,14 +64,3 @@ def gradient_descent(x,y):
 x=np.array([1,2,3,4,5])
 y=np.array([5,7,9,11,13])
 gradient_descent(x,y)
-    
-
-    return one_hot_encoded, category_to_index
-
-data = np.array(['A', 'B', 'C', 'D', 'E', 'F'])
-
-encoded_data, encoding_map = onehot(data)
-
-print("Original Data:", data)
-print("One-Hot Encoded Data:\n", encoded_data)
-print("Encoding Map:", encoding_map)
